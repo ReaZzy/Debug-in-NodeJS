@@ -1,6 +1,6 @@
 const express = require( 'express' );
 const bodyParser = require( 'body-parser' )
-
+const {sequelize} = require('./db')
 const user = require( './controllers/usercontroller' );
 const game = require( './controllers/gamecontroller' )
 
@@ -14,7 +14,11 @@ app.use( '/api/game', game );
 
 const PORT = process.env.PORT || 3000
 
-app.listen( PORT, () => {
-    console.log( `server is running http://localhost:${PORT}/` )
-} )
+
+sequelize.sync({ force: true }).then(()=>{
+    app.listen( PORT, () => {
+        console.log( `server is running http://localhost:${PORT}/` )
+    })
+})
+
 

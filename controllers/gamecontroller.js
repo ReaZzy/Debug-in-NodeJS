@@ -1,4 +1,4 @@
-var router = require('express').Router();
+const router = require('express').Router();
 const {Game} = require('../db');
 
 router.get('/all', (req, res) => {
@@ -70,7 +70,7 @@ router.put('/update/:id', (req, res) => {
         {
             where: {
                 id: req.params.id,
-                owner_id: req.user
+                owner_id: req.user.id
             }
         })
         .then(

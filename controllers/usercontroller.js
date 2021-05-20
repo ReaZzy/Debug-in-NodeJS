@@ -23,7 +23,6 @@ router.post('/signup', async (req, res) => {
             passwordHash: bcrypt.hashSync(req.body.passwordHash, 10),
             email: req.body.email,
         })
-        console.log(user)
         if(user) signupSuccess(user)
     }catch (e) {
         signupFail(e)
