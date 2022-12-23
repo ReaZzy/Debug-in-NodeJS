@@ -10,7 +10,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^7.6.0",
     "sequelize": "^6.6.5"
   },
